@@ -44,3 +44,41 @@ terraform.rc
 # planout
 
 *.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+venv/
+.venv/
+env/
+.env/
+
+# Airflow specific
+logs/
+airflow.cfg
+webserver_config.py
+unittests.cfg
+.airflowignore # If you are using this feature to ignore DAGs within Airflow's DAG_FOLDER
+*.db # For SQLite databases, e.g., airflow.db
+dags_local_copy/ # If you have local copies of DAGs for testing
+plugins_local_copy/ # If you have local copies of plugins
+
+# IDE specific (examples for common IDEs)
+.idea/
+.vscode/
+*.iml
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Dependency management
+Pipfile.lock # If using Pipenv and prefer to regenerate it
+poetry.lock # If using Poetry and prefer to regenerate it
