@@ -19,7 +19,7 @@ dataset_file = "yellow_tripdata_2021-01.csv"
 dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}.gz"
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 parquet_file = dataset_file.replace('.csv', '.parquet')
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'demo_dataset')
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'ny_taxi_de')
 create_ext_sql = f"""
 CREATE OR REPLACE EXTERNAL TABLE `{PROJECT_ID}.{BIGQUERY_DATASET}.external_table`
 OPTIONS (
