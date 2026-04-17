@@ -15,13 +15,14 @@ from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobO
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 
-dataset_file = "yellow_tripdata_2021-01.csv"
-dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}.gz"
+dataset_file = "green_tripdata_2021-01.csv"
+dataset_dbt_name = "green_tripdata"
+dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/{dataset_file}.gz"
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 parquet_file = dataset_file.replace('.csv', '.parquet')
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'ny_taxi_de')
 create_ext_sql = f"""
-CREATE OR REPLACE EXTERNAL TABLE `{PROJECT_ID}.{BIGQUERY_DATASET}.external_table`
+CREATE OR REPLACE EXTERNAL TABLE `{PROJECT_ID}.{BIGQUERY_DATASET}.{dataset_dbt_name}`
 OPTIONS (
   format = 'PARQUET',
   uris = ['gs://{BUCKET}/raw/{parquet_file}']
