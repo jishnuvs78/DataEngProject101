@@ -82,3 +82,20 @@ build/
 # Dependency management
 Pipfile.lock # If using Pipenv and prefer to regenerate it
 poetry.lock # If using Poetry and prefer to regenerate it
+.idea
+*.tfstate
+*.tfstate.*
+**.terraform
+**.terraform.lock.*
+**google_credentials.json
+**logs/
+**.env
+**__pycache__/
+.history
+**/ny_taxi_postgres_data/*
+serving_dir
+.ipynb_checkpoints/
+!week_6_stream_processing/avro_example/data/rides.csv
+*.parquet
+*.csv
+*.duckdb
