@@ -1,6 +1,6 @@
 # DataEngProject101
 
-A comprehensive data engineering project demonstrating a complete data pipeline architecture with orchestration, batch processing, analytics engineering, and real-time streaming capabilities.
+A comprehensive data engineering project demonstrating a complete data pipeline architecture with orchestration, batch processing, analytics engineering, and real-time streaming capabilities made as a part of the Data Talks Club DataEngineeringZoomcamp course.
 
 ## 📋 Project Overview
 
@@ -9,6 +9,7 @@ This project implements a modern data stack for NYC Taxi data processing, featur
 - **Batch Processing**: PySpark for large-scale data transformations
 - **Analytics Engineering**: dbt for data modeling and transformations
 - **Data Warehousing**: Google Cloud Platform (BigQuery) integration
+- **Analytics & Visualization**: Looker Studio for interactive dashboards and reports
 - **Streaming**: Apache Flink for real-time data processing
 - **Infrastructure as Code**: Terraform for cloud resource provisioning
 
@@ -70,6 +71,38 @@ dbt project for analytics engineering and data transformation.
 - `snapshots/` - Slowly Changing Dimension tracking
 
 **Project:** `taxi_rides_ny` - NYC Taxi rides analysis project
+
+### 📊 Analytics & Visualization - Looker Studio
+Interactive dashboards and reports built with Google Looker Studio for analytics representation.
+
+**Purpose:**
+- Consume transformed data from dbt models in BigQuery
+- Create interactive visualizations and dashboards
+- Provide self-service analytics for stakeholders
+- Track KPIs and business metrics for NYC Taxi operations
+
+**Key Dashboards:**
+- Taxi trip analysis and trends
+- Revenue and pricing insights
+- Geographic heatmaps and zone analysis
+- Temporal patterns and peak hour analysis
+- Driver and passenger metrics
+
+**Features:**
+- Real-time data refresh from BigQuery
+- Interactive filters and drill-down capabilities
+- Custom metrics and calculated fields
+- Automated report generation and distribution
+- Mobile-friendly dashboard layouts
+
+**Connection Flow:**
+```
+dbt Models (BigQuery)
+    ↓
+Looker Studio Reports
+    ↓
+Interactive Dashboards & Visualizations
+```
 
 ### `/streaming` - Real-Time Data Processing
 Apache Flink setup for stream processing.
